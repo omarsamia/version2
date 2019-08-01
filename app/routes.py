@@ -15,6 +15,6 @@ def results():
         user_genre_dict = request.form
         print(user_genre_dict)
         user_genre = user_genre_dict["Genres"]
-        song = model.song_picker(user_genre)
-        print(song)
-        return render_template('result3.html', user_genre = user_genre, song = song)    
+        songs = model.all_songs(user_genre)
+        print(songs)
+        return render_template('result3.html', user_genre = user_genre, songs = songs)    
